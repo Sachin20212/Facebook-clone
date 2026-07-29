@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Facebook clone</title>
+        <style>
+            *{margin: 0; padding: 0;}
+
+            body{
+                background-color: white;
+            }
+
+            nav{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: #1876f2;
+                padding: 5px 5%;
+            }
+            .logo{
+                width: 160px;
+                margin-right: 45px;
+            }
+            .left_nar, .right_nar{ 
+                display: flex;
+                align-items: center;
+            }
+            .left_nar ul a{
+                list-style: none;
+                display: inline-block;
+            }
+            .left_nar ul a img{
+                width: 28px;
+                margin: 0 15px;
+            }
+            .nav-user-logo img{
+                width: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            .search-box{
+                background: #efefef;
+                width: 350px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                padding: 0 18px;
+            }
+            .search-box img{
+                width: 18px;
+            }
+            .search-box input{
+                width: 100%;
+                background: transparent;
+                padding: 10px;
+                outline: none;
+                border: 0;
+            }
+            .nav-user-logo{
+                margin-left: 30px;
+            }
+            .online{
+                position: relative;
+            }
+            .online::after{
+                content: '';
+                width: 13px; height: 13px;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                background-color: green;
+                top: 0;
+                right: 0;
+                position: absolute;
+            }
+            
+           
+
+        </style>
+    </head>
+    <body>
+        
+        <nav>
+            <div class="left_nar">
+                <a href="/facebook clone/index.html" class="logo"><span>S</span>book</a>
+                <ul>
+                    <a href=""><img src="/facebook clone/assets/nav/notifications.png" alt=""></a>
+                    <a href=""><img src="/facebook clone/assets/nav/mail.png" alt=""></a>
+                    <a href=""><img src="/facebook clone/assets/nav/live_tv.png" alt=""></a>
+                </ul>
+            </div>
+            <div class="right_nar">
+                 <div class="search-box">
+                    <img src="/facebook clone/assets/nav/search.png" alt="">
+                    <input type="text" placeholder="search">
+                 </div>
+                <div class="nav-user-logo online">
+                    <img src="/facebook clone/logo/paint.png" alt="">
+                </div>
+            </div>
+        </nav>
+    </body>
+</html>
