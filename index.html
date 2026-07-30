@@ -115,7 +115,7 @@
                 margin-bottom:  2rem;
                 color: #626262;
                 width: fit-content;
-                font-size: 2em;
+                font-size: 2em 27px;
             }
             .imp-links a img{
                 width: 35px;
@@ -145,18 +145,18 @@
                 justify-content: space-between;
                 margin-bottom: 18px;
             }
-            .sidebar-title h3{
-                font-size: 2em;
+            .right_sidebar h3{
+                font-size: 2em 27px;
                 font-weight: 600;
             }
             .sidebar-title a{
                 text-decoration: none;
                 color: #1876f2;
-                font-size: 2em;
+                font-size: 2em 27px;
             }
             .event{
                 display: flex;
-                font-size: 1em;
+                font-size: 1em 14px;
                 margin-bottom: 20px;
             }
             .left-events{
@@ -170,11 +170,11 @@
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
             .event p{
-                font-size: 1.8em;
+                font-size: 1.8em 22px;
             }
             .event a{
                 text-decoration: none;
-                font-size: 1.8em;
+                font-size: 1.8em 22px;
                 color: #1876f2;
             }
             .left-events span{
@@ -184,10 +184,188 @@
                 width: 100%;
                 background: #1876f2;
                 color: #fff;
-                font-size: 1.5em;
+                font-size: 1.5em 15px;
                 padding: 4px 0;
             }
+            .right-events p img{
+                background-color: #626262;
+            }
+            .sidebar-ads{
+                width: 100%;
+                margin-bottom: 20px;
+                border-radius: 4px;
+            }
+            .online-list{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .online-list .online img{
+                width: 40px;
+                border-radius: 50%;
+            }
+            .online-list .online{
+                width: 40px;
+                border-radius: 50%;
+                margin-right: 15px;
+            }
+            .online-list .online::after{
+                top: unset;
+                bottom: 5px;
+            } 
+            .story-gallery{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .story{
+                flex-basis: 18%;
+                width: 17%;
+                padding-top: 32%;
+                position: relative;
+                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
+                background-position: center;
+                background-size: cover;
+                border-radius: 10px;
+            }
+            
+            .story img{
+                position: absolute;
+                width: 50px;
+                background-color: black;
+                top: 10px;
+                left: 10px;
+                border: 5px solid #626262;
+                border-radius: 50%;
+            }
+            .story p{
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+                color: #fff;
+                font-size: 1.6em 16px;
+            }
+            .story1{
+                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
+            }
+            .story2{
+                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
+            }
+            .story3{
+                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
+            }
+            .story4{
+                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
+            }
+            .story5{
+                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
+            }
+            .story1 img{
+                top: unset;
+                left: 50%;
+                bottom: 40px;
+                transform: translateX(-50%);
+                width: 55px;
+            }
+            
+            .write-post-container{
+                width: 100%;
+                background: #fff;
+                border-radius: 6px;
+                padding: 20px;
+                color: #626262;
+            }
+
+            .user-profile{
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+            .user-profile img{
+                width: 55px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+            .user-profile p{
+                margin-bottom: -5px;
+                font-weight: 500;
+                color: #626262;
+            }
+            .user-profile small{
+                font-size: 1.6rem 16px;
+            }
+            .user-profile div small img{
+                position: absolute;
+                background-color: #626262;
+                width: 15px;
+                margin: 5px 0 0 5px;
+            }
+
+            .post-input-container{
+                padding: 20px 0 0  55px;
+            }
+            .post-input-container textarea{
+                width: 100%;
+                border: 0;
+                outline: 0;
+                border-radius: 1px solid #cccccc74;
+                border-bottom: 2px solid #716e6e74;
+                background: transparent;
+                resize: none;
+            }
+            .add-post-links{
+                display: flex;
+                margin-top: 10px;
+            }
+            .add-post-links a{
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                color: #626262;
+                margin-right: 30px;
+                font-size: 1.8rem 16px;
+            }
+            .add-post-links a img{
+                width: 20px;
+                margin-right: 10px;
+            }
            
+            .post-container{
+                width: 100%;
+                background: #fff;
+                border-radius: 6px;
+                padding: 20px;
+                color: #626262;
+                margin: 20px 0;
+            }
+
+            .user-profile span{
+                padding-top: 5px;
+                font-size: 1.8rem 16px;
+                color: #9a9a9a;
+            }
+
+            .post-text{
+                color: #9a9a9a;
+                margin: 15px 0;
+                font-size: 1.9rem 19px;
+            }
+            .post-text a{
+                color: #1876f2;
+                text-decoration: none;
+            }
+            .post-text span{
+                color: #626262;
+                font-weight: 500;
+            }
+
+            .post-img{
+                width: 100%;
+                border-radius: 4px;
+                margin-bottom: 5px;
+                background: cover;
+            }
 
         </style>
     </head>
@@ -195,20 +373,20 @@
         
         <nav>
             <div class="left_nar">
-                <a href="/index.html" class="logo"><span>S</span>book</a>
+                <a href="/facebook clone/index.html" class="logo"><span>S</span>book</a>
                 <ul>
-                    <a href=""><img src="/assets/nav/notifications.png" alt=""></a>
-                    <a href=""><img src="/assets/nav/mail.png" alt=""></a>
-                    <a href=""><img src="/assets/nav/live_tv.png" alt=""></a>
+                    <a href=""><img src="/facebook clone/assets/nav/notifications.png" alt=""></a>
+                    <a href=""><img src="/facebook clone/assets/nav/mail.png" alt=""></a>
+                    <a href=""><img src="/facebook clone/assets/nav/live_tv.png" alt=""></a>
                 </ul>
             </div>
             <div class="right_nar">
                  <div class="search-box">
-                    <img src="/assets/nav/search.png" alt="">
+                    <img src="/facebook clone/assets/nav/search.png" alt="">
                     <input type="text" placeholder="search">
                  </div>
                 <div class="nav-user-logo online">
-                    <img src="/logo/paint.png" alt="">
+                    <img src="/facebook clone/logo/paint.png" alt="">
                 </div>
             </div>
         </nav>
@@ -216,48 +394,148 @@
         <div class="container">
             <div class="left_sidebar">
                 <div class="imp-links">
-                    <a href=""><img src="/assets/container/Left-sidebar/Latest-news.png" alt="Latest-News">Latest-News</a>
-                    <a href=""><img src="/assets/container/Left-sidebar/Friends.png" alt="Friends">Friends</a>
-                    <a href=""><img src="/assets/container/Left-sidebar/Group.png" alt="Group">Group</a>
-                    <a href=""><img src="/assets/container/Left-sidebar/Martketplace.png" alt="Marketplace">Marketplace</a>
-                    <a href=""><img src="/assets/container/Left-sidebar/watch.png" alt="Watch">Watch</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Latest-news.png" alt="Latest-News">Latest-News</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Friends.png" alt="Friends">Friends</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Group.png" alt="Group">Group</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Martketplace.png" alt="Marketplace">Marketplace</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/watch.png" alt="Watch">Watch</a>
                     <a href="">See More</a>
                 </div>
                 <div class="shortcut-links">
                     <p>Your Shortcuts</p>
-                    <a href=""><img src="/assets/container/Left-sidebar/Web Development.jpg">Web Development</a>
-                    <a href=""><img src="/assets/container/Left-sidebar/Web Design Course.jpg">Web Design Course</a>
-                    <a href=""><img src="/assets/container/Left-sidebar/Full Strack Development.jpg">Full Stack Development</a>
-                    <a href=""><img src="/assets/container/Left-sidebar/Website Experts.jpg">Website Experts</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Web Development.jpg">Web Development</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Web Design Course.jpg">Web Design Course</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Full Strack Development.jpg">Full Stack Development</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Website Experts.jpg">Website Experts</a>
                 </div>
             </div>
-            <div class="main_content"></div>
+
+            <div class="main_content">
+
+                <div class="story-gallery">
+
+                    <div class="story story1">
+                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
+                        <p>Post Story</p>
+                    </div>
+                    <div class="story story2">
+                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
+                        <p>Post Story</p>
+                    </div>
+                    <div class="story story3">
+                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
+                        <p>Post Story</p>
+                    </div>
+                    <div class="story story4">
+                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
+                        <p>Post Story</p>
+                    </div>
+                    <div class="story story5">
+                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
+                        <p>Post Story</p>
+                    </div>
+
+                </div>
+
+                <div class="write-post-container">
+
+                    <div class="user-profile">
+                        <img src="/facebook clone/logo/paint.png">
+                        <div>
+                            <p>Sachin Upadhyay</p>
+                            <small>Public <img src="/facebook clone/assets/container/Main-content/Down arrow.png"></small>
+                        </div>
+                    </div>
+
+                    <div class="post-input-container">
+                        <textarea rows="5" placeholder="What's on your mind friend"></textarea>
+                        <div class="add-post-links">
+                            <a href=""><img src="/facebook clone/assets/container/Main-content/live-video.png">Live Video</a>
+                            <a href=""><img src="/facebook clone/assets/container/Main-content/photo_camera.png">Photo/Video</a>
+                            <a href=""><img src="/facebook clone/assets/container/Main-content/add_reaction.png">Feling/Activity</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="post-container">
+                    
+                    <div class="user-profile">
+                        <img src="/facebook clone/logo/paint.png">
+                        <div>
+                            <p>Sachin Upadhyay</p>
+                            <span>August 1 2026 10:55 AM</span>
+                        </div>
+                    </div>
+                    <p class="post-text">Subscribe <span>@East Tutorials</span>Web Development and UI Designs to Follow My Account <a href="">#EasyTutorials</a> <a href="">#Youtube Channel</a></p>
+                    <img src="/facebook clone/assets/container/Main-content/Team.jpg" class="post-img">
+                </div>
+
+            </div>
+
             <div class="right_sidebar">
+
                 <div class="sidebar-title">
                     <h3>Events</h3>
                     <a href="">Sell All</a>
                 </div>
+
                 <div class="event">
+
                     <div class="left-events">
                         <h2>30</h2>
                         <span>July</span>
                     </div>
+
                     <div class="right-events">
                         <h3>Social Media</h3>
-                        <p>Willson Tech Park</p>
+                        <p><img src="/facebook clone/assets/container/Left-sidebar/location.png"> Willson Tech Park</p>
                         <a href="">More Info</a>
                     </div>
                 </div>
+
                 <div class="event">
                     <div class="left-events">
                         <h2>15</h2>
                         <span>Sep</span>
                     </div>
+
                     <div class="right-events">
                         <h3>Mobile Marketing</h3>
-                        <p>Willson Tech Park</p>
+                        <p><img src="/facebook clone/assets/container/Left-sidebar/location.png"> Willson Tech Park</p>
                         <a href="">More Info</a>
                     </div>
+
+                </div>
+
+                <div class="sidebar-title">
+                    <h3>Advertisement</h3>
+                    <a href="">Close</a>
+                </div>
+                <img src="/facebook clone/assets/container/Left-sidebar/Advertisement.jpg" class="sidebar-ads">
+
+                <div class="sidebar-title">
+                    <h3>Conversation</h3>
+                    <a href="">Hide Chat</a>
+                </div>
+
+                <div class="online-list">
+                    <div class="online">
+                        <img src="" alt="">
+                    </div>
+                    <p>XYZ Person</p>
+                </div>
+                 <div class="online-list">
+                    <div class="online">
+                        <img src="" alt="">
+                    </div>
+                    <p>XYZ Person</p>
+                </div>
+                 <div class="online-list">
+                    <div class="online">
+                        <img src="" alt="">
+                    </div>
+                    <p>XYZ Person</p>
                 </div>
             </div>
         </div>
