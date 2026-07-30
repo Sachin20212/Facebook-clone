@@ -3,10 +3,11 @@
     <head>
         <title>Facebook clone</title>
         <style>
-            *{margin: 0; padding: 0;}
+            *{margin: 0; padding: 0;
+            box-sizing: border-box;}
 
             body{
-                background-color: white;
+                background-color: rgb(255, 245, 245);
             }
 
             nav{
@@ -15,6 +16,9 @@
                 justify-content: space-between;
                 background: #1876f2;
                 padding: 5px 5%;
+                position: sticky;
+                top: 0;
+                z-index: 100;
             }
             .logo{
                 width: 160px;
@@ -33,7 +37,6 @@
                 align-items: center;
             }
             .left_nar ul a{
-                font-size: 15px;
                 list-style: none;
                 display: inline-block;
             }
@@ -81,6 +84,109 @@
                 position: absolute;
             }
             
+            .container{
+                display: flex;
+                justify-content: space-between;
+                padding: 13px 5%;
+
+            }
+            .left_sidebar{
+                flex-basis: 25%;
+                position: sticky;
+                align-self: flex-start;
+            }
+            .main_content{
+                flex-basis: 47%;
+            }
+            .right_sidebar{
+                flex-basis: 25%;
+                position: sticky;
+                align-self: flex-start;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 4px;
+                color: #626262 ;
+            }
+
+            .imp-links a, .shortcut-links a{
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                margin-bottom:  2rem;
+                color: #626262;
+                width: fit-content;
+                font-size: 2em;
+            }
+            .imp-links a img{
+                width: 35px;
+                margin-right: 15px;
+                background-color: black;
+            }
+            .imp-links a:last-child{
+                color: #1876f2;
+            }
+            .imp-links{
+                border-bottom: 1px solid #ccc;
+            }
+            .shortcut-links a img{
+                width: 60px; height: 60px;
+                border-radius: 4px;
+                margin-right: 15px;
+            }
+            .shortcut-links p{
+                margin: 20px 0;
+                color: #626262;
+                font-weight: 500;
+            }
+            
+            .sidebar-title{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 18px;
+            }
+            .sidebar-title h3{
+                font-size: 2em;
+                font-weight: 600;
+            }
+            .sidebar-title a{
+                text-decoration: none;
+                color: #1876f2;
+                font-size: 2em;
+            }
+            .event{
+                display: flex;
+                font-size: 1em;
+                margin-bottom: 20px;
+            }
+            .left-events{
+                border-radius: 10px;
+                height: 90px; width: 90px;
+                margin-right: 15px;
+                padding-top: 10px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .event p{
+                font-size: 1.8em;
+            }
+            .event a{
+                text-decoration: none;
+                font-size: 1.8em;
+                color: #1876f2;
+            }
+            .left-events span{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: #1876f2;
+                color: #fff;
+                font-size: 1.5em;
+                padding: 4px 0;
+            }
            
 
         </style>
@@ -91,20 +197,69 @@
             <div class="left_nar">
                 <a href="/facebook clone/index.html" class="logo"><span>S</span>book</a>
                 <ul>
-                    <a href=""><img src="assets/nav/notifications.png" alt=""></a>
-                    <a href=""><img src="assets/nav/mail.png" alt=""></a>
-                    <a href=""><img src="assets/nav/live_tv.png" alt=""></a>
+                    <a href=""><img src="/facebook clone/assets/nav/notifications.png" alt=""></a>
+                    <a href=""><img src="/facebook clone/assets/nav/mail.png" alt=""></a>
+                    <a href=""><img src="/facebook clone/assets/nav/live_tv.png" alt=""></a>
                 </ul>
             </div>
             <div class="right_nar">
                  <div class="search-box">
-                    <img src="assets/nav/search.png" alt="">
+                    <img src="/facebook clone/assets/nav/search.png" alt="">
                     <input type="text" placeholder="search">
                  </div>
                 <div class="nav-user-logo online">
-                    <img src="logo/paint.png" alt="">
+                    <img src="/facebook clone/logo/paint.png" alt="">
                 </div>
             </div>
         </nav>
+
+        <div class="container">
+            <div class="left_sidebar">
+                <div class="imp-links">
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Latest-news.png" alt="Latest-News">Latest-News</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Friends.png" alt="Friends">Friends</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Group.png" alt="Group">Group</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Martketplace.png" alt="Marketplace">Marketplace</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/watch.png" alt="Watch">Watch</a>
+                    <a href="">See More</a>
+                </div>
+                <div class="shortcut-links">
+                    <p>Your Shortcuts</p>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Web Development.jpg">Web Development</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Web Design Course.jpg">Web Design Course</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Full Strack Development.jpg">Full Stack Development</a>
+                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Website Experts.jpg">Website Experts</a>
+                </div>
+            </div>
+            <div class="main_content"></div>
+            <div class="right_sidebar">
+                <div class="sidebar-title">
+                    <h3>Events</h3>
+                    <a href="">Sell All</a>
+                </div>
+                <div class="event">
+                    <div class="left-events">
+                        <h2>30</h2>
+                        <span>July</span>
+                    </div>
+                    <div class="right-events">
+                        <h3>Social Media</h3>
+                        <p>Willson Tech Park</p>
+                        <a href="">More Info</a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="left-events">
+                        <h2>15</h2>
+                        <span>Sep</span>
+                    </div>
+                    <div class="right-events">
+                        <h3>Mobile Marketing</h3>
+                        <p>Willson Tech Park</p>
+                        <a href="">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
