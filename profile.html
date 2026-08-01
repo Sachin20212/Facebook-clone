@@ -34,9 +34,10 @@
                 z-index: 100;
             }
             .logo{
-                width: 160px;
+                max-width: 160px;
+                min-width: 150;
                 margin-right: 45px;
-                font-size: 50px;
+                font-size: clamp(1.8rem, 2.2rem, 2.6rem);
                 text-decoration: none;
                 border-radius: 20px;
             }
@@ -63,10 +64,9 @@
                 cursor: pointer;
             }
             .search-box{
-                background: #adaaaa;
+                background: #efefef;
                 width: 350px;
                 border-radius: 20px;
-                display: flex;
                 align-items: center;
                 padding: 0 18px;
             }
@@ -512,12 +512,12 @@
                 background: #0a0a0a;
             }
 
-            @media (max-width: 1080px) {
+            @media (max-width: 1050px) {
                 nav{
-                    height: 80px;
+                    min-height: 80px;
                 }
                 .left_nar ul a img{
-                width: 35px;
+                min-width: 36px;
                 margin: 0 15px;
                 }
                 .search-box{
@@ -531,7 +531,7 @@
                     
                 }
                 .search-box-toggle{
-                    width: 100px;
+                    width: 250px;
                     border-radius: 27px;
                 }
 
@@ -543,7 +543,7 @@
                 }
 
                 .nav-user-logo{
-                margin-left: 33px;
+                margin-left: 35px;
                 }
 
                 .left_sidebar{
@@ -555,7 +555,7 @@
                 .main_content{
                     flex-basis: 100%;
                 }
-            }                 
+            }         
 
         </style>
     </head>
@@ -591,7 +591,7 @@
                         <img src="/facebook clone/logo/paint.png">
                         <div>
                             <p>Sachin Upadhyay</p>
-                            <a href="/facebook clone/profile.html">See your profile</a>
+                            <a href="">See your profile</a>
                         </div>
                     </div>
 
