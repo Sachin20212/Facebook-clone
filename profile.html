@@ -3,626 +3,715 @@
     <head>
         <title>Facebook clone</title>
         <style>
-            *{margin: 0; padding: 0;
-            box-sizing: border-box;}
-
-            :root{
+                       *{margin: 0; padding: 0;
+           box-sizing: border-box;}
+           :root{
+               --body--color: #efefef;
+               --nav--color: #1876f2;
+               --bg-color: #fff;
+           }
+           .dark-theme{
                 --body--color: #efefef;
-                --nav--color: #1876f2;
-                --bg-color: #fff;
-            }
-
-            .dark-theme{
-                 --body--color: #efefef;
-                --nav--color: #000;
-                --bg-color: #000;
-            }
-
-            body{
-                background-color: var(--bg-color);
-                transition: background 0.3s;
-            }
-
-            nav{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                background: var(--nav--color);
-                padding: 5px 5%;
-                position: sticky;
-                top: 0;
-                z-index: 100;
-            }
-            .logo{
-                width: 160px;
-                margin-right: 45px;
-                font-size: 50px;
-                text-decoration: none;
-                border-radius: 20px;
-            }
-            .logo span{
-                background-color: white;
-                color: black;
-                border-radius: 20px;
-            }
-            .left_nar, .right_nar{ 
-                display: flex;
-                align-items: center;
-            }
-            .left_nar ul a{
-                list-style: none;
-                display: inline-block;
-            }
-            .left_nar ul a img{
-                width: 28px;
-                margin: 0 15px;
-            }
-            .nav-user-logo img{
-                width: 50px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            .search-box{
-                background: #adaaaa;
-                width: 350px;
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                padding: 0 18px;
-            }
-            .search-box img{
-                width: 18px;
-            }
-            .search-box input{
-                width: 100%;
-                background: transparent;
-                padding: 10px;
-                outline: none;
-                border: 0;
-            }
-            .nav-user-logo{
-                margin-left: 30px;
-            }
-            .online{
-                position: relative;
-            }
-            .online::after{
-                content: '';
-                width: 13px; height: 13px;
-                border: 2px solid #fff;
-                border-radius: 50%;
-                background-color: green;
-                top: 0;
-                right: 0;
-                position: absolute;
-            }
-            
-            .container{
-                display: flex;
-                justify-content: space-between;
-                padding: 13px 5%;
-
-            }
-            .left_sidebar{
-                top: 70px;
-                flex-basis: 25%;
-                position: sticky;
-                align-self: flex-start;
-                background: var(--bg-color);
-            }
-            .main_content{
-                flex-basis: 47%;
-            }
-            .right_sidebar{
-                top: 70px;
-                flex-basis: 25%;
-                position: sticky;
-                align-self: flex-start;
-                background-color: var(--bg-color);
-                padding: 20px;
-                border-radius: 4px;
-                color: #626262 ;
-            }
-
-            .imp-links a, .shortcut-links a{
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                margin-bottom:  2rem;
-                color: #626262;
-                width: fit-content;
-                font-size: 2em 27px;
-            }
-            .imp-links a img{
-                width: 35px;
-                margin-right: 15px;
-                background-color: var(--bg-color);
-            }
-            .imp-links a:last-child{
-                color: #1876f2;
-            }
-            .imp-links{
-                border-bottom: 1px solid #ccc;
-            }
-            .shortcut-links a img{
-                width: 60px; height: 60px;
-                border-radius: 4px;
-                margin-right: 15px;
-            }
-            .shortcut-links p{
-                margin: 20px 0;
-                color: #626262;
-                font-weight: 500;
-            }
-            
-            .sidebar-title{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 18px;
-            }
-            .right_sidebar h3{
-                font-size: 2em 27px;
-                font-weight: 600;
-            }
-            .sidebar-title a{
-                text-decoration: none;
-                color: #1876f2;
-                font-size: 2em 27px;
-            }
-            .event{
-                display: flex;
-                font-size: 1em 14px;
-                margin-bottom: 20px;
-            }
-            .left-events{
-                border-radius: 10px;
-                height: 90px; width: 90px;
-                margin-right: 15px;
-                padding-top: 10px;
-                text-align: center;
-                position: relative;
-                overflow: hidden;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            .event p{
-                font-size: 1.8em 22px;
-            }
-            .event a{
-                text-decoration: none;
-                font-size: 1.8em 22px;
-                color: #1876f2;
-            }
-            .left-events span{
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background: #1876f2;
-                color: #fff;
-                font-size: 1.5em 15px;
-                padding: 4px 0;
-            }
-            .right-events p img{
-                background-color: #626262;
-            }
-            .sidebar-ads{
-                width: 100%;
-                margin-bottom: 20px;
-                border-radius: 4px;
-            }
-            .online-list{
-                display: flex;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-            .online-list .online img{
-                width: 55px;
-                border-radius: 50%;
-            }
-            .online-list .online{
-                width: 53px;
-                border-radius: 50%;
-                margin-right: 15px;
-            }
-            .online-list .online::after{
-                top: unset;
-                bottom: 5px;
-            } 
-            .story-gallery{
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 20px;
-            }
-            .story{
-                flex-basis: 18%;
-                width: 17%;
-                padding-top: 32%;
-                position: relative;
-                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
-                background-position: center;
-                background-size: cover;
-                border-radius: 10px;
-            }
-            
-            .story img{
-                position: absolute;
-                width: 50px;
-                background-color: black;
-                top: 10px;
-                left: 10px;
-                border: 5px solid #626262;
-                border-radius: 50%;
-            }
-            .story p{
-                position: absolute;
-                bottom: 10px;
-                width: 100%;
-                text-align: center;
-                color: #fff;
-                font-size: 1.6em 16px;
-            }
-            .story1{
-                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
-            }
-            .story2{
-                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
-            }
-            .story3{
-                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
-            }
-            .story4{
-                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
-            }
-            .story5{
-                background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
-            }
-            .story1 img{
-                top: unset;
-                left: 50%;
-                bottom: 40px;
-                transform: translateX(-50%);
-                width: 55px;
-            }
-            
-            .write-post-container{
-                width: 100%;
-                background: var(--bg-color);
-                border-radius: 6px;
-                padding: 20px;
-                color: #626262;
-            }
-
-            .user-profile{
-                width: 100%;
-                display: flex;
-                align-items: center;
-            }
-            .user-profile img{
-                width: 55px;
-                border-radius: 50%;
-                margin-right: 10px;
-            }
-            .user-profile p{
-                margin-bottom: -5px;
-                font-weight: 500;
-                color: #626262;
-            }
-            .user-profile small{
-                font-size: 1.6rem 16px;
-            }
-            .user-profile div small img{
-                position: absolute;
-                background-color: #626262;
-                width: 15px;
-                margin: 5px 0 0 5px;
-            }
-
-            .post-input-container{
-                padding: 20px 0 0  55px;
-            }
-            .post-input-container textarea{
-                width: 100%;
-                border: 0;
-                outline: 0;
-                border-radius: 1px solid #cccccc74;
-                border-bottom: 2px solid #716e6e74;
-                background: transparent;
-                resize: none;
-            }
-            .add-post-links{
-                display: flex;
-                margin-top: 10px;
-            }
-            .add-post-links a{
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                color: #626262;
-                margin-right: 30px;
-                font-size: 1.8rem 16px;
-            }
-            .add-post-links a img{
-                width: 20px;
-                margin-right: 10px;
-            }
+               --nav--color: #000;
+               --bg-color: #000;
+           }
+           body{
+               background-color: var(--bg-color);
+               transition: background 0.3s;
+           }
+           nav{
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               background: var(--nav--color);
+               padding: 5px 5%;
+               position: sticky;
+               top: 0;
+               z-index: 100;
+           }
+           .logo{
+               width: 160px;
+               margin-right: 45px;
+               font-size: 50px;
+               text-decoration: none;
+               border-radius: 20px;
+           }
+           .logo span{
+               background-color: white;
+               color: black;
+               border-radius: 20px;
+           }
+           .left_nar, .right_nar{ 
+               display: flex;
+               align-items: center;
+           }
+           .left_nar ul a{
+               list-style: none;
+               display: inline-block;
+           }
+           .left_nar ul a img{
+               width: 28px;
+               margin: 0 15px;
+           }
+           .nav-user-logo img{
+               width: 50px;
+               border-radius: 50%;
+               cursor: pointer;
+           }
+           .search-box{
+               background: #adaaaa;
+               width: 350px;
+               border-radius: 20px;
+               display: flex;
+               align-items: center;
+               padding: 0 18px;
+           }
+           .search-box img{
+               width: 18px;
+           }
+           .search-box input{
+               width: 100%;
+               background: transparent;
+               padding: 10px;
+               outline: none;
+               border: 0;
+           }
+           .nav-user-logo{
+               margin-left: 30px;
+           }
+           .online{
+               position: relative;
+           }
+           .online::after{
+               content: '';
+               width: 13px; height: 13px;
+               border: 2px solid #fff;
+               border-radius: 50%;
+               background-color: green;
+               top: 0;
+               right: 0;
+               position: absolute;
+           }
            
-            .post-container{
-                width: 100%;
-                background: var(--bg-color);
-                border-radius: 6px;
-                padding: 20px;
-                color: #626262;
-                margin: 20px 0;
-            }
+           .container{
+               display: flex;
+               justify-content: space-between;
+               padding: 13px 5%;
+           }
+           .left_sidebar{
+               top: 70px;
+               flex-basis: 25%;
+               position: sticky;
+               align-self: flex-start;
+               background: var(--bg-color);
+           }
+           .main_content{
+               flex-basis: 47%;
+           }
+           .right_sidebar{
+               top: 70px;
+               flex-basis: 25%;
+               position: sticky;
+               align-self: flex-start;
+               background-color: var(--bg-color);
+               padding: 20px;
+               border-radius: 4px;
+               color: #626262 ;
+           }
+           .imp-links a, .shortcut-links a{
+               text-decoration: none;
+               display: flex;
+               align-items: center;
+               margin-bottom:  2rem;
+               color: #626262;
+               width: fit-content;
+               font-size: 2em 27px;
+           }
+           .imp-links a img{
+               width: 35px;
+               margin-right: 15px;
+               background-color: var(--bg-color);
+           }
+           .imp-links a:last-child{
+               color: #1876f2;
+           }
+           .imp-links{
+               border-bottom: 1px solid #ccc;
+           }
+           .shortcut-links a img{
+               width: 60px; height: 60px;
+               border-radius: 4px;
+               margin-right: 15px;
+           }
+           .shortcut-links p{
+               margin: 20px 0;
+               color: #626262;
+               font-weight: 500;
+           }
+           
+           .sidebar-title{
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               margin-bottom: 18px;
+           }
+           .right_sidebar h3{
+               font-size: 2em 27px;
+               font-weight: 600;
+           }
+           .sidebar-title a{
+               text-decoration: none;
+               color: #1876f2;
+               font-size: 2em 27px;
+           }
+           .event{
+               display: flex;
+               font-size: 1em 14px;
+               margin-bottom: 20px;
+           }
+           .left-events{
+               border-radius: 10px;
+               height: 90px; width: 90px;
+               margin-right: 15px;
+               padding-top: 10px;
+               text-align: center;
+               position: relative;
+               overflow: hidden;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           }
+           .event p{
+               font-size: 1.8em 22px;
+           }
+           .event a{
+               text-decoration: none;
+               font-size: 1.8em 22px;
+               color: #1876f2;
+           }
+           .left-events span{
+               position: absolute;
+               bottom: 0;
+               left: 0;
+               width: 100%;
+               background: #1876f2;
+               color: #fff;
+               font-size: 1.5em 15px;
+               padding: 4px 0;
+           }
+           .right-events p img{
+               background-color: #626262;
+           }
+           .sidebar-ads{
+               width: 100%;
+               margin-bottom: 20px;
+               border-radius: 4px;
+           }
+           .online-list{
+               display: flex;
+               align-items: center;
+               margin-bottom: 20px;
+           }
+           .online-list .online img{
+               width: 55px;
+               border-radius: 50%;
+           }
+           .online-list .online{
+               width: 53px;
+               border-radius: 50%;
+               margin-right: 15px;
+           }
+           .online-list .online::after{
+               top: unset;
+               bottom: 5px;
+           } 
+           .story-gallery{
+               display: flex;
+               justify-content: space-between;
+               margin-bottom: 20px;
+           }
+           .story{
+               flex-basis: 18%;
+               width: 17%;
+               padding-top: 32%;
+               position: relative;
+               background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
+               background-position: center;
+               background-size: cover;
+               border-radius: 10px;
+           }
+           
+           .story img{
+               position: absolute;
+               width: 50px;
+               background-color: black;
+               top: 10px;
+               left: 10px;
+               border: 5px solid #626262;
+               border-radius: 50%;
+           }
+           .story p{
+               position: absolute;
+               bottom: 10px;
+               width: 100%;
+               text-align: center;
+               color: #fff;
+               font-size: 1.6em 16px;
+           }
+           .story1{
+               background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
+           }
+           .story2{
+               background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
+           }
+           .story3{
+               background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
+           }
+           .story4{
+               background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
+           }
+           .story5{
+               background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url();
+           }
+           .story1 img{
+               top: unset;
+               left: 50%;
+               bottom: 40px;
+               transform: translateX(-50%);
+               width: 55px;
+           }
+           
+           .write-post-container{
+               width: 100%;
+               background: var(--bg-color);
+               border-radius: 6px;
+               padding: 20px;
+               color: #626262;
+           }
+           .user-profile{
+               width: 100%;
+               display: flex;
+               align-items: center;
+           }
+           .user-profile img{
+               width: 55px;
+               border-radius: 50%;
+               margin-right: 10px;
+           }
+           .user-profile p{
+               margin-bottom: -5px;
+               font-weight: 500;
+               color: #626262;
+           }
+           .user-profile small{
+               font-size: 1.6rem 16px;
+           }
+           .user-profile div small img{
+               position: absolute;
+               background-color: #626262;
+               width: 15px;
+               margin: 5px 0 0 5px;
+           }
+           .post-input-container{
+               padding: 20px 0 0  55px;
+           }
+           .post-input-container textarea{
+               width: 100%;
+               border: 0;
+               outline: 0;
+               border-radius: 1px solid #cccccc74;
+               border-bottom: 2px solid #716e6e74;
+               background: transparent;
+               resize: none;
+           }
+           .add-post-links{
+               display: flex;
+               margin-top: 10px;
+           }
+           .add-post-links a{
+               text-decoration: none;
+               display: flex;
+               align-items: center;
+               color: #626262;
+               margin-right: 30px;
+               font-size: 1.8rem 16px;
+           }
+           .add-post-links a img{
+               width: 20px;
+               margin-right: 10px;
+           }
+          
+           .post-container{
+               width: 100%;
+               background: var(--bg-color);
+               border-radius: 6px;
+               padding: 20px;
+               color: #626262;
+               margin: 20px 0;
+           }
+           .user-profile span{
+               padding-top: 5px;
+               font-size: 1.8rem 16px;
+               color: #9a9a9a;
+           }
+           .post-text{
+               color: #9a9a9a;
+               margin: 15px 0;
+               font-size: 1.9rem 19px;
+           }
+           .post-text a{
+               color: #1876f2;
+               text-decoration: none;
+           }
+           .post-text span{
+               color: #626262;
+               font-weight: 500;
+           }
+           .post-img{
+               width: 100%;
+               border-radius: 4px;
+               margin-bottom: 5px;
+               background: cover;
+           }
+           .post-row{
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+           }
+           .activity-icons div img{
+               width: 25px;
+               margin-right: 10px;
+           }
+           .activity-icons div{
+               display: inline-block;
+               align-items: center;
+               margin-right: 10px;
+           }
+           .post-profile-icon{
+               display: flex;
+               align-items: center;
+           }
+           .post-profile-icon img{
+               width: 30px;
+               border-radius: 50%;
+               margin-right: 10px;
+           }
+           .post-profile-icon span img{
+               position: absolute;
+               background-color: #626262;
+               width: 13px;
+               margin: -4px 5px 5px -8px;
+           }
+           .post-row a{
+               color: #9a9a9a;
+           }
+           .load-more-btn{
+               display: block;
+               margin: auto;
+               cursor: pointer;
+               padding: 5px 10px;
+               border: 1px solid #9a9a9a;
+               color: #626262;
+               background: transparent;
+               border-radius: 4px;
+           }
+           .footer{
+               text-align: center;
+               color: #626262;
+               padding: 10px 0 20px;
+               font-size: 1.6rem 16px;
+           }
+           .settings-menu{
+               position: absolute;
+               width: 90%;
+               max-width: 350px;
+               background: var(--bg-color);
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+               border-radius: 4px;
+               overflow: hidden;
+               top: 100%;
+               right: 5%;
+               max-height: 0;
+               transition: max-height 0.3s;
+           }
+           .setting-menu-height{
+               max-height: 480px;
+           }
+           .user-profile a{
+               font-size: 1.6rem 16px;
+               color: #1876f2;
+               text-decoration: none;
+           }
+           .setting-menu-inner{
+               padding: 20px;
+           }
+           .settings-menu hr{
+               border: 0;
+               height: 1px;
+               background: #626262;
+               margin: 15px 0;
+           }
+           .settings-links{
+               display: flex;
+               align-items: center;
+               margin: 15px 0;
+           }
+           .settings-links .settings-icon{
+               width: 38px;
+               margin-right: 10px;
+               border-radius: 50%;
+           }
+           .settings-links a{
+               display: flex;
+               flex: 1;
+               align-items: center;
+               justify-content: space-between;
+               text-decoration: none;
+               color: #626262;
+           }
+           #dark-btn{
+               position: absolute;
+               top: 20px;
+               right: 20px;
+               background: #ccc;
+               width: 50px;
+               border-radius: 15px;
+               padding: 3px 3px;
+               cursor: pointer;
+               display: flex;
+               transition: padding-left 0.5s, background 0.5s;
+           }
+           #dark-btn span{
+               width: 18px; height: 18px;
+               background: #fff;
+               border-radius: 50%;
+               display: inline-block;
+           }
+           #dark-btn.dark-btn-on{
+               padding-left: 27px;
+               background: #0a0a0a;
+           }
+           @media (max-width: 1080px) {
+               nav{
+                   height: 80px;
+               }
+               .left_nar ul a img{
+               width: 35px;
+               margin: 0 15px;
+               }
+               .search-box{
+                   position: relative;
+                   background:     #b3b3b3;
+                   width: 30px;
+                   border-radius: 20px;
+                   display: flex;
+                   align-items: center;
+                   padding: 0 18px;
+                   
+               }
+               .search-box-toggle{
+                   width: 270px;
+                   border-radius: 27px;
+               }
+               .search-box img{
+                   position: absolute;
+                   width: auto;
+                   left: 7%;
+                   bottom: 15%;
+               }
+               .nav-user-logo{
+               margin-left: 33px;
+               }
+               .left_sidebar{
+                   display: none;
+               }
+                .right_sidebar{
+                   display: none;
+               }
+               .main_content{
+                   flex-basis: 100%;
+               }
+               .story{
+                   margin-right: 10px;
+                   flex-basis: 33%;
+                   width: 17%;
+                   padding-top: 36%;
+                   position: relative;
+                   background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
+                   background-position: center;
+                   background-size: cover;
+                   border-radius: 10px;
+               }
+               
+               .story img{
+                   position: absolute;
+                   width: 55px;
+                   background-color: black;
+                   top: 10px;
+                   left: 10px;
+                   border: 5px solid #626262;
+                   border-radius: 50%;
+               }
+               .story p{
+                   position: absolute;
+                   bottom: 10px;
+                   width: 100%;
+                   text-align: center;
+                   color: #fff;
+                   font-size: 25px;
+               }
+               .story1 img{
+                   top: unset;
+                   left: 50%;
+                   bottom: 40px;
+                   transform: translateX(-50%);
+                   width: 72px;
+               }
+               .write-post-container{
+               width: 100%;
+               background: var(--bg-color);
+               border-radius: 6px;
+               padding: 20px;
+               color: #626262;
+               }
+               .user-profile .user-profile-paint{
+                   width: 75px;
+                   border-radius: 50%;
+                   border: 6px solid #1bce7d;
+                   margin-right: 10px;
+               }
+               .user-profile p{
+                   font-size: 24px;
+               }
+               .user-profile small{
+                   font-size: 20px;
+               }
+               .user-profile div small img{
+                   width: 18px;
+               }
+   
+               .post-input-container{
+                   padding: 20px 0 0  52px;
+               }
+               .post-input-container textarea{
+                   border-bottom: 2px solid #6a686874;
+               }
+          
+           }        
 
-            .user-profile span{
-                padding-top: 5px;
-                font-size: 1.8rem 16px;
-                color: #9a9a9a;
-            }
-
-            .post-text{
-                color: #9a9a9a;
-                margin: 15px 0;
-                font-size: 1.9rem 19px;
-            }
-            .post-text a{
-                color: #1876f2;
-                text-decoration: none;
-            }
-            .post-text span{
-                color: #626262;
-                font-weight: 500;
-            }
-
-            .post-img{
-                width: 100%;
-                border-radius: 4px;
-                margin-bottom: 5px;
-                background: cover;
-            }
-
-            .post-row{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .activity-icons div img{
-                width: 25px;
-                margin-right: 10px;
-            }
-            .activity-icons div{
-                display: inline-block;
-                align-items: center;
-                margin-right: 10px;
-            }
-
-            .post-profile-icon{
-                display: flex;
-                align-items: center;
-            }
-            .post-profile-icon img{
-                width: 30px;
-                border-radius: 50%;
-                margin-right: 10px;
-            }
-            .post-profile-icon span img{
-                position: absolute;
-                background-color: #626262;
-                width: 13px;
-                margin: -4px 5px 5px -8px;
-            }
-
-            .post-row a{
-                color: #9a9a9a;
-
-            }
-
-            .load-more-btn{
-                display: block;
-                margin: auto;
-                cursor: pointer;
-                padding: 5px 10px;
-                border: 1px solid #9a9a9a;
-                color: #626262;
-                background: transparent;
-                border-radius: 4px;
-            }
-
-            .footer{
-                text-align: center;
-                color: #626262;
-                padding: 10px 0 20px;
-                font-size: 1.6rem 16px;
-            }
-
-            .settings-menu{
-                position: absolute;
-                width: 90%;
-                max-width: 350px;
-                background: var(--bg-color);
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-                border-radius: 4px;
-                overflow: hidden;
-                top: 100%;
-                right: 5%;
-                max-height: 0;
-                transition: max-height 0.3s;
-            }
-            .setting-menu-height{
-                max-height: 480px;
-            }
-
-            .user-profile a{
-                font-size: 1.6rem 16px;
-                color: #1876f2;
-                text-decoration: none;
-            }
-
-            .setting-menu-inner{
-                padding: 20px;
-            }
-            .settings-menu hr{
-                border: 0;
-                height: 1px;
-                background: #626262;
-                margin: 15px 0;
-            }
-
-            .settings-links{
-                display: flex;
-                align-items: center;
-                margin: 15px 0;
-            }
-            .settings-links .settings-icon{
-                width: 38px;
-                margin-right: 10px;
-                border-radius: 50%;
-            }
-            .settings-links a{
-                display: flex;
-                flex: 1;
-                align-items: center;
-                justify-content: space-between;
-                text-decoration: none;
-                color: #626262;
-            }
-
-            #dark-btn{
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                background: #ccc;
-                width: 50px;
-                border-radius: 15px;
-                padding: 3px 3px;
-                cursor: pointer;
-                display: flex;
-                transition: padding-left 0.5s, background 0.5s;
-            }
-            #dark-btn span{
-                width: 18px; height: 18px;
-                background: #fff;
-                border-radius: 50%;
-                display: inline-block;
-            }
-            #dark-btn.dark-btn-on{
-                padding-left: 27px;
-                background: #0a0a0a;
-            }
-
-            @media (max-width: 1080px) {
-                nav{
-                    height: 80px;
+                    /* ---- Profile Page ---- */
+        
+                .profile-container {
+                    padding: 20px 330px;
+                    color: #626262;
                 }
-                .left_nar ul a img{
-                width: 35px;
-                margin: 0 15px;
-                }
-                .search-box{
-                    position: relative;
-                    background:     #b3b3b3;
-                    width: 30px;
-                    border-radius: 20px;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 18px;
-                    
-                }
-                .search-box-toggle{
-                    width: 270px;
-                    border-radius: 27px;
-                }
-
-                .search-box img{
-                    position: absolute;
-                    width: auto;
-                    left: 7%;
-                    bottom: 15%;
-                }
-
-                .nav-user-logo{
-                margin-left: 33px;
-                }
-
-                .left_sidebar{
-                    display: none;
-                }
-                 .right_sidebar{
-                    display: none;
-                }
-                .main_content{
-                    flex-basis: 100%;
-                }
-                .story{
-                    margin-right: 10px;
-                    flex-basis: 33%;
-                    width: 17%;
-                    padding-top: 36%;
-                    position: relative;
-                    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
-                    background-position: center;
-                    background-size: cover;
-                    border-radius: 10px;
-                }
-                
-                .story img{
-                    position: absolute;
-                    width: 55px;
-                    background-color: black;
-                    top: 10px;
-                    left: 10px;
-                    border: 5px solid #626262;
-                    border-radius: 50%;
-                }
-                .story p{
-                    position: absolute;
-                    bottom: 10px;
+                .cover-img{
                     width: 100%;
-                    text-align: center;
-                    color: #fff;
-                    font-size: 25px;
-                }
-                .story1 img{
-                    top: unset;
-                    left: 50%;
-                    bottom: 40px;
-                    transform: translateX(-50%);
-                    width: 72px;
+                    border-radius: 8px;
+                    margin-bottom: 14px;
                 }
 
-                .write-post-container{
-                width: 100%;
-                background: var(--bg-color);
-                border-radius: 6px;
-                padding: 20px;
-                color: #626262;
+                .profile-details{
+                    background: var(--bg-color);
+                    padding: 20px;
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
                 }
-                .user-profile .user-profile-paint{
-                    width: 75px;
-                    border-radius: 50%;
-                    border: 6px solid #1bce7d;
-                    margin-right: 10px;
+                .pd-row{
+                    display: flex;
+                    align-items: flex-start;
                 }
-                .user-profile p{
-                    font-size: 24px;
+                .pd-image{
+                    width: 160px;
+                    margin-right: 20px;
+                    border-radius: 6px;
                 }
-                .user-profile small{
+                .pd-row div h3{
+                    margin: 10px 0 10px 5px;
+                    font-size: 38px;
+                    font-weight: 600;
+                }
+                .pd-row div p{
+                    margin: 0 0 10px 5px;
                     font-size: 20px;
                 }
-                .user-profile div small img{
-                    width: 18px;
+                .pd-row div img{
+                    width: 35px;
+                    border-radius: 50%;
+                    margin: 10px 0 0 5px;
                 }
-    
-                .post-input-container{
-                    padding: 20px 0 0  52px;
+
+                .pd-right button{
+                    background-color: #1876f2;
+                    border: 0;
+                    outline: 0;
+                    padding: 6px 10px;
+                    display: inline-flex;
+                    align-items: center;
+                    color: #fff;
+                    border-radius: 3px;
+                    margin-left: 10px;
+                    cursor: pointer;
                 }
-                .post-input-container textarea{
-                    border-bottom: 2px solid #6a686874;
+                .pd-right button img{
+                    height: 50px;
+                    margin-right: 10px;
                 }
-           
-            }                 
+                .pd-right button:first-child{
+                    background: #e4e6eb;
+                    color: #000;
+                }
+                .pd-right{
+                    text-align: right;
+                }
+                .pd-right a{
+                    background: #e4e6eb;
+                    border-radius: 3px;
+                    padding: 12px;
+                    display: inline-flex;
+                    margin-top: 30px;
+                }
+                .pd-right a img{
+                    width: 30pxpx;
+                }
+
+                .profile-info{
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                }
+                .info-col{
+                    flex-basis: 33%;
+                }
+                .post-col{
+                    flex-basis: 65%;
+                }
+                .profile-intro{
+                    background: var(--bg-color);
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    border-radius: 4px;
+                }
+                .profile-intro h3{
+                    font-weight: 600;
+                }
+                .intro-text{
+                    text-align: center;
+                    margin: 10px 0;
+                    font-size: 19px;
+                    
+                }
+                .intro-text img{
+                    width: 27px;
+                    margin-bottom: -3px;
+                }
+                .profile-intro hr{
+                    border: 0;
+                    height: 1px;
+                    background: #ccc;
+                    margin: 24px 0;
+                }
 
         </style>
     </head>
@@ -658,7 +747,7 @@
                         <img src="/facebook clone/logo/paint.png">
                         <div>
                             <p>Sachin Upadhyay</p>
-                            <a href="/facebook clone/profile.html">See your profile</a>
+                            <a href="">See your profile</a>
                         </div>
                     </div>
 
@@ -708,74 +797,64 @@
 
         </nav>
 
-        <div class="container">
-            <div class="left_sidebar">
-                <div class="imp-links">
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Latest-news.png" alt="Latest-News">Latest-News</a>
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Friends.png" alt="Friends">Friends</a>
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Group.png" alt="Group">Group</a>
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Martketplace.png" alt="Marketplace">Marketplace</a>
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/watch.png" alt="Watch">Watch</a>
-                    <a href="">See More</a>
+        <div class="profile-container">
+            <img src="/facebook clone/Profile img/cover (2).png" class="cover-img">
+            <div class="profile-details">
+                <div class="pd-left">
+                    <div class="pd-row">
+                        <img src="/facebook clone/Profile img/profile.png.jpeg" class="pd-image">
+                        <div>
+                            <h3>Sachin Upadhyay</h3>
+                            <p>120 Friends - 20 Mutual</p>
+                            <img src="/facebook clone/Profile img/member-1 (1).png">
+                            <img src="/facebook clone/Profile img/member-2 (1).png">
+                            <img src="/facebook clone/Profile img/member-3 (1).png">
+                            <img src="/facebook clone/Profile img/member-4 (1).png">
+                        </div>
+                    </div>
                 </div>
-                <div class="shortcut-links">
-                    <p>Your Shortcuts</p>
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Web Development.jpg">Web Development</a>
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Web Design Course.jpg">Web Design Course</a>
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Full Strack Development.jpg">Full Stack Development</a>
-                    <a href=""><img src="/facebook clone/assets/container/Left-sidebar/Website Experts.jpg">Website Experts</a>
+                <div class="pd-right">
+                    <button type="button"><img src="/facebook clone/Profile img/add-friend.png"> Friend</button>
+                    <button type="button"><img src="/facebook clone/Profile img/Comments.png">Message</button>
+                    <br>
+                    <a href=""><img src="/facebook clone/Profile img/more_horiz.png"></a>
                 </div>
             </div>
 
-            <div class="main_content">
-
-                <div class="story-gallery">
-
-                    <div class="story story1">
-                        <img src="/facebook clone/logo/paint.png">
-                        <p>Post Story</p>
+            <div class="profile-info">
+                <div class="info-col">
+                    <div class="profile-intro">
+                        <h3>Intro</h3>
+                        <p class="intro-text">Believe in yourself and you can do unbelievable things. <img src="/facebook clone/Profile img/add_reaction.png" ></p>
+                        <hr>
+                        <ul>
+                            <li>Director at 99media Ltd</li>
+                            <li>Studied at Amity University</li>
+                            <li>Went to DPS Delhi</li>
+                            <li>Lives in Noida</li>
+                        </ul>
                     </div>
-                    <div class="story story2">
-                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
-                        <p>Post Story</p>
-                    </div>
-                    <div class="story story3">
-                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
-                        <p>Post Story</p>
-                    </div>
-                    <div class="story story4">
-                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
-                        <p>Post Story</p>
-                    </div>
-                    <div class="story story5">
-                        <img src="/facebook clone/assets/container/Main-content/add_circle.png">
-                        <p>Post Story</p>
-                    </div>
-
                 </div>
+                <div class="post-col">
+                     <div class="write-post-container">
+                         <div class="user-profile">
+                             <img src="/facebook clone/logo/paint.png" class="user-profile-paint">
+                             <div>
+                                 <p>Sachin Upadhyay</p>
+                                 <small>Public <img src="/facebook clone/assets/container/Main-content/Down arrow.png"></small>
+                             </div>
+                         </div>
+                         <div class="post-input-container">
+                             <textarea rows="5" placeholder="What's on your mind friend"></textarea>
+                             <div class="add-post-links">
+                                 <a href=""><img src="/facebook clone/assets/container/Main-content/video_call.png">Live Video</a>
+                                 <a href=""><img src="/facebook clone/assets/container/Main-content/Photo.png">Photo/Video</a>
+                                 <a href=""><img src="/facebook clone/assets/container/Main-content/add_reaction.png" style="background-color: #626262 rgba(0, 0, 0,0.6);">Feling/Activity</a>
+                             </div>
+                         </div>
+                     </div>
 
-                <div class="write-post-container">
-
-                    <div class="user-profile">
-                        <img src="/facebook clone/logo/paint.png" class="user-profile-paint">
-                        <div>
-                            <p>Sachin Upadhyay</p>
-                            <small>Public <img src="/facebook clone/assets/container/Main-content/Down arrow.png"></small>
-                        </div>
-                    </div>
-
-                    <div class="post-input-container">
-                        <textarea rows="5" placeholder="What's on your mind friend"></textarea>
-                        <div class="add-post-links">
-                            <a href=""><img src="/facebook clone/assets/container/Main-content/video_call.png">Live Video</a>
-                            <a href=""><img src="/facebook clone/assets/container/Main-content/Photo.png">Photo/Video</a>
-                            <a href=""><img src="/facebook clone/assets/container/Main-content/add_reaction.png" style="background-color: #626262 rgba(0, 0, 0,0.6);">Feling/Activity</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="post-container">
+                     <div class="post-container">
                     <div class="post-row">
                         <div class="user-profile">
                         <img src="/facebook clone/logo/paint.png">
@@ -908,73 +987,6 @@
                     </div>
                 </div>
 
-                <button type="button" class="load-more-btn">Load More</button>
-
-            </div>
-
-            <div class="right_sidebar">
-
-                <div class="sidebar-title">
-                    <h3>Events</h3>
-                    <a href="">Sell All</a>
-                </div>
-
-                <div class="event">
-
-                    <div class="left-events">
-                        <h2>30</h2>
-                        <span>July</span>
-                    </div>
-
-                    <div class="right-events">
-                        <h3>Social Media</h3>
-                        <p><img src="/facebook clone/assets/container/Left-sidebar/location.png"> Willson Tech Park</p>
-                        <a href="">More Info</a>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <div class="left-events">
-                        <h2>15</h2>
-                        <span>Sep</span>
-                    </div>
-
-                    <div class="right-events">
-                        <h3>Mobile Marketing</h3>
-                        <p><img src="/facebook clone/assets/container/Left-sidebar/location.png"> Willson Tech Park</p>
-                        <a href="">More Info</a>
-                    </div>
-
-                </div>
-
-                <div class="sidebar-title">
-                    <h3>Advertisement</h3>
-                    <a href="">Close</a>
-                </div>
-                <img src="/facebook clone/assets/container/Left-sidebar/Advertisement.jpg" class="sidebar-ads">
-
-                <div class="sidebar-title">
-                    <h3>Conversation</h3>
-                    <a href="">Hide Chat</a>
-                </div>
-
-                <div class="online-list">
-                    <div class="online">
-                        <img src="/facebook clone/assets/container/Left-sidebar/Individual.webp" alt="">
-                    </div>
-                    <p>XYZ Person</p>
-                </div>
-                 <div class="online-list">
-                    <div class="online">
-                        <img src="/facebook clone/assets/container/Left-sidebar/Individual1.webp" alt="">
-                    </div>
-                    <p>XYZ Person</p>
-                </div>
-                 <div class="online-list">
-                    <div class="online">
-                        <img src="/facebook clone/assets/container/Left-sidebar/Individual2.webp" alt="">
-                    </div>
-                    <p>XYZ Person</p>
                 </div>
             </div>
         </div>
