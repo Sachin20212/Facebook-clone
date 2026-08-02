@@ -512,7 +512,7 @@
                 background: #0a0a0a;
             }
 
-            @media (max-width: 1080px) {
+           @media (max-width: 1080px) {
                 nav{
                     height: 80px;
                 }
@@ -531,7 +531,7 @@
                     
                 }
                 .search-box-toggle{
-                    width: 100px;
+                    width: 270px;
                     border-radius: 27px;
                 }
 
@@ -555,7 +555,75 @@
                 .main_content{
                     flex-basis: 100%;
                 }
+                .story{
+                    margin-right: 10px;
+                    flex-basis: 33%;
+                    width: 17%;
+                    padding-top: 36%;
+                    position: relative;
+                    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(/Sachin.jpeg);
+                    background-position: center;
+                    background-size: cover;
+                    border-radius: 10px;
+                }
+                
+                .story img{
+                    position: absolute;
+                    width: 55px;
+                    background-color: black;
+                    top: 10px;
+                    left: 10px;
+                    border: 5px solid #626262;
+                    border-radius: 50%;
+                }
+                .story p{
+                    position: absolute;
+                    bottom: 10px;
+                    width: 100%;
+                    text-align: center;
+                    color: #fff;
+                    font-size: 25px;
+                }
+                .story1 img{
+                    top: unset;
+                    left: 50%;
+                    bottom: 40px;
+                    transform: translateX(-50%);
+                    width: 72px;
+                }
+
+                .write-post-container{
+                width: 100%;
+                background: var(--bg-color);
+                border-radius: 6px;
+                padding: 20px;
+                color: #626262;
+                }
+                .user-profile .user-profile-paint{
+                    width: 75px;
+                    border-radius: 50%;
+                    border: 6px solid #1bce7d;
+                    margin-right: 10px;
+                }
+                .user-profile p{
+                    font-size: 24px;
+                }
+                .user-profile small{
+                    font-size: 20px;
+                }
+                .user-profile div small img{
+                    width: 18px;
+                }
+    
+                .post-input-container{
+                    padding: 20px 0 0  52px;
+                }
+                .post-input-container textarea{
+                    border-bottom: 2px solid #6a686874;
+                }
+           
             }                 
+             
 
         </style>
     </head>
